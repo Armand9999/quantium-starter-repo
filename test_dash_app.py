@@ -61,15 +61,14 @@ def test_radio_button_present(dash_duo):
     dash_duo.start_server(app)
 
     radio_button_selectors = [
-        "#radio",
-        "div[id='radio']",
-        "#radio-filter",
-        "div[id='radio-filter']",
-        ".radio",
-        ".radio-filter",
+        "#region-filter",
+        "region-filter",
+        ".region-filter",
+        "div[id='region-filter']",
+        "div[classname='region-filter']",
     ]
 
-    assert wait_for_any_element(dash_duo, radio_button_selectors, 4), "Radio element found on the page"
+    assert wait_for_any_element(dash_duo, radio_button_selectors, 4), "Radio element not found on the page"
 
-time.sleep(5000)
+
 driver.quit()
